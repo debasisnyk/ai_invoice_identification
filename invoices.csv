@@ -1,0 +1,11 @@
+invoice_id,country,amount,status
+INV1001,Germany,7000,Failed
+INV1002,Germany,2000,Success
+INV1003,France,9000,Failed
+INV1004,Germany,12000,Failed
+INV1005,USA,15000,Failed
+INV1006,Germany,4000,Failed
+INV1007,India,2000,Success
+INV1008,Egypt,5500,Failed
+INV1007,Nepal,2000,Failed
+INV1007,Bhutan,7000,Failed
