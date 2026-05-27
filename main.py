@@ -1,29 +1,40 @@
-import pandas as pd
+from google import genai
+from dotenv import load_dotenv
+import os
 
 # -----------------------------
-# Read CSV file
+# Load environment variables
 # -----------------------------
 
-df = pd.read_csv("invoices.csv")
+load_dotenv()
+
+api_key = os.getenv("GEMINI_API_KEY")
 
 # -----------------------------
-# Function to get Invoices with status "failed" for a specific country and minimum amount
+# Create Gemini client
 # -----------------------------
 
-def get_failed_invoices(country, min_amount):
-
-    filtered_df = df[
-        (df["country"].str.lower() == country.lower())
-        & (df["status"].str.lower() == "failed")
-        & (df["amount"] > min_amount)
-    ]
-
-    return filtered_df
+client = genai.Client(api_key=api_key)
 
 # -----------------------------
-# Test function
+# Ask user input
 # -----------------------------
 
-result = get_failed_invoices("Germany", 5000)
+user_prompt = input("Ask something: ")
 
-print(result)
+# -----------------------------
+# Send prompt to Gemini
+# -----------------------------
+
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents=user_prompt
+)
+
+# -----------------------------
+# Print response
+# -----------------------------
+
+print("\nGemini Response:\n")
+
+print(response.text)

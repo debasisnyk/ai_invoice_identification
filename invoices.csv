@@ -7,5 +7,8 @@ INV1005,USA,15000,Failed
 INV1006,Germany,4000,Failed
 INV1007,India,2000,Success
 INV1008,Egypt,5500,Failed
-INV1007,Nepal,2000,Failed
-INV1007,Bhutan,7000,Failed
+INV1009,Nepal,2000,Failed
+INV1010,Bhutan,7000,Failed
+INV1011,France,4000,Success
+INV1012,Spain,8000,Success
+INV1013,France,6000,Failed
